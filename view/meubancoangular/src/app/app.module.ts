@@ -9,6 +9,13 @@ import { ExtratoComponent } from './pages/extrato/extrato.component';
 import { SaqueComponent } from './pages/saque/saque.component';
 import { DepositoComponent } from './pages/deposito/deposito.component';
 import { HomeComponent } from './pages/home/home.component';
+import { EstudoComponent } from './components/estudo/estudo.component';
+import { LabelInputComponent } from './components/label-input/label-input.component';
+import { CheckboxComponent } from './components/checkbox/checkbox.component';
+import { ButtonComponent } from './components/button/button.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CadastrarClientesComponent } from './pages/clientes/cadastrar-clientes/cadastrar-clientes.component';
+
 
 @NgModule({
   declarations: [
@@ -18,11 +25,18 @@ import { HomeComponent } from './pages/home/home.component';
     ExtratoComponent,
     SaqueComponent,
     DepositoComponent,
-    HomeComponent
+    HomeComponent,
+    EstudoComponent,
+    LabelInputComponent,
+    CheckboxComponent,
+    ButtonComponent,
+    CadastrarClientesComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
