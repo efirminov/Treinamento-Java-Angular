@@ -18,6 +18,7 @@ import { CadastrarClientesComponent } from './pages/clientes/cadastrar-clientes/
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { ClienteComponent } from './pages/cliente/cliente.component';
+import { ContaComponent } from './pages/conta/conta.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ClienteComponent } from './pages/cliente/cliente.component';
     CheckboxComponent,
     ButtonComponent,
     CadastrarClientesComponent,
-    ClienteComponent
+    ClienteComponent,
+    ContaComponent
   ],
   imports: [
     CommonModule,

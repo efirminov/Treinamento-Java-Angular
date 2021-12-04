@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 
 import { RouterModule, Routes } from '@angular/router';
 import { ClienteComponent } from './pages/cliente/cliente.component';
+import { ContaComponent } from './pages/conta/conta.component';
 import { DepositoComponent } from './pages/deposito/deposito.component';
 import { ExtratoComponent } from './pages/extrato/extrato.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'extrato', component: ExtratoComponent },
   { path: 'saque', component: SaqueComponent },
   { path: 'deposito', component: DepositoComponent },
-  { path: 'cliente', component: ClienteComponent }
+  { path: 'cliente', component: ClienteComponent },
+  { path: 'conta', component: ContaComponent }
 ];
 
 
