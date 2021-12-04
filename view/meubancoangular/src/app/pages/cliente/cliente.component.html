@@ -1,26 +1,36 @@
-<br>
-<h1>Clientes</h1>
-<br>
-<div *ngIf="!clientes.length">
-  <div class="spinner-border" role="status">
-    <span class="visually-hidden">Loading...</span>
+<div class="row" style="align-items: center">
+  <div class="col-10">
+    <h1 class="mt-5 mb-4">Clientes</h1>
   </div>
-  Carregando...
+  <div class="col-2">
+    <a class="btn btn-dark" routerLink="cadastrar">Novo cliente</a>
+  </div>
 </div>
-<table *ngIf="clientes.length" class="table table-dark  table-hover"  >
+
+<div *ngIf="!clientes.length" class="d-flex justify-content-center">
+  <div class="spinner-grow text-dark" role="status">
+    <span class="visually-hidden m-3">Loading...</span>
+  </div>
+  <div class="spinner-grow text-dark" role="status">
+    <span class="visually-hidden m-3">Loading...</span>
+  </div>
+  <div class="spinner-grow text-dark" role="status">
+    <span class="visually-hidden m-3">Loading...</span>
+  </div>
+</div>
+
+<table *ngIf="clientes.length" class="table table-hover">
   <thead>
     <tr>
-      <th scope="col">ID</th>
       <th scope="col">Nome</th>
+      <th scope="col">Email</th>
       <th scope="col">CPF</th>
-      <th scope="col">E-mail</th>
       <th scope="col">Observações</th>
-      <th scope="col">Ativo</th>
+      <th scope="col">Status</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let cliente of clientes">
-      <td> {{ cliente.id }} </td>
+    <tr *ngFor="let cliente of clientes;">
       <td>{{ cliente.nome }}</td>
       <td>{{ cliente.email }}</td>
       <td>{{ cliente.cpf }}</td>
@@ -32,5 +42,3 @@
     </tr>
   </tbody>
 </table>
-<br>
-<a class="btn btn-dark" routerLink="cadastrar">Cadastrar</a>

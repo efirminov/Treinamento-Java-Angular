@@ -16,10 +16,10 @@ export class ClienteComponent implements OnInit {
     this.listarTodosClientes();
   }
 
-  listarTodosClientes(){
+  listarTodosClientes() {
     this.clienteService.listarTodosClientes().subscribe(clientesApi => {
       this.clientes = clientesApi;
-    })
+    });
   }
 
 }

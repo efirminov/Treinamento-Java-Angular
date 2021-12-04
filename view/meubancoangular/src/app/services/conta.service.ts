@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { IConta } from '../interfaces/conta';
 
 @Injectable({
   providedIn: 'root'
@@ -7,5 +9,10 @@ import { environment } from 'src/environments/environment';
 
 export class ContaService {
   api = `${environment.api}/conta/`;
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+  listarTodasConta(){
+    return this.http.get<IConta[]>(this.api);
+  }
+
 }

@@ -14,4 +14,8 @@ export class ClienteService {
   listarTodosClientes(){
     return this.http.get<ICliente[]>(this.api);
   }
+
+  cadastrar(cliente: ICliente){
+    return this.http.post<ICliente>(this.api, cliente);
+  }
 }
