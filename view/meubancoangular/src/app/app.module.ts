@@ -15,7 +15,9 @@ import { CheckboxComponent } from './components/checkbox/checkbox.component';
 import { ButtonComponent } from './components/button/button.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CadastrarClientesComponent } from './pages/clientes/cadastrar-clientes/cadastrar-clientes.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { ClienteComponent } from './pages/cliente/cliente.component';
 
 @NgModule({
   declarations: [
@@ -30,13 +32,16 @@ import { CadastrarClientesComponent } from './pages/clientes/cadastrar-clientes/
     LabelInputComponent,
     CheckboxComponent,
     ButtonComponent,
-    CadastrarClientesComponent
+    CadastrarClientesComponent,
+    ClienteComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
