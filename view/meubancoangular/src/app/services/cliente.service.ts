@@ -18,4 +18,8 @@ export class ClienteService {
   cadastrar(cliente: ICliente){
     return this.http.post<ICliente>(this.api, cliente);
   }
+
+  remover(id: number) {
+    return this.http.delete(`${this.api}/${id}`);
+  }
 }

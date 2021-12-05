@@ -1,36 +1,30 @@
-<div class="row" style="align-items: center">
-  <div class="col-10">
-    <h1 class="mt-5 mb-4">Contas</h1>
-  </div>
-</div>
+<h1>Contas</h1>
 
-<div *ngIf="!contas.length" class="d-flex justify-content-center">
-  <div class="spinner-grow text-dark" role="status">
-    <span class="visually-hidden m-3">Loading...</span>
-  </div>
-  <div class="spinner-grow text-dark" role="status">
-    <span class="visually-hidden m-3">Loading...</span>
-  </div>
-  <div class="spinner-grow text-dark" role="status">
-    <span class="visually-hidden m-3">Loading...</span>
-  </div>
-</div>
-
-<table *ngIf="contas.length" class="table table-hover">
+<table class="table table-dark table-striped">
   <thead>
     <tr>
-      <th scope="col">Nome do Cliente</th>
-      <th scope="col">Número da Conta</th>
       <th scope="col">Agência</th>
+      <th scope="col">Conta</th>
+      <th scope="col">Cliente</th>
       <th scope="col">Saldo</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let conta of contas;">
-      <td>{{ conta.cliente.nome }}</td>
-      <td>{{ conta.numero }}</td>
-      <td>{{ conta.agencia }}</td>
-      <td>R$ {{ conta.saldo }},00</td>
+    <tr *ngFor="let conta of contas">
+      <td>
+        {{ conta.agencia }}
+      </td>
+      <td>
+        {{ conta.numero }}
+      </td>
+      <td>
+        {{ conta.cliente.nome }}
+      </td>
+      <td>
+        {{ conta.saldo | currency: 'BRL' }}
+      </td>
     </tr>
   </tbody>
 </table>
+
+<a class="btn btn-dark" routerLink="cadastrar">Cadastrar</a>

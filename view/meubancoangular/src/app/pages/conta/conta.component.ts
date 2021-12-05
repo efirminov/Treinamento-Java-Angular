@@ -3,24 +3,24 @@ import { IConta } from 'src/app/interfaces/conta';
 import { ContaService } from 'src/app/services/conta.service';
 
 @Component({
-  selector: 'app-conta',
+  selector: 'app-contas',
   templateUrl: './conta.component.html',
   styleUrls: ['./conta.component.css']
 })
-export class ContaComponent implements OnInit {
+export class ContasComponent implements OnInit {
 
   contas: IConta[] = [];
 
   constructor(private contaService: ContaService) { }
 
   ngOnInit(): void {
-    this.listarTodasContas();
+    this.listarContas();
   }
 
-  listarTodasContas() {
-    this.contaService.listarTodasConta().subscribe(contasApi => {
-      this.contas = contasApi;
-    });
+  listarContas() {
+    this.contaService.listarTodasContas().subscribe(contasAPI => {
+      this.contas = contasAPI;
+    })
   }
 
 }

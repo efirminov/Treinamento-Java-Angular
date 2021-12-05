@@ -1,1 +1,36 @@
-<p>cadastro-edicao-clientes works!</p>
+<h1>Cadastro de Clientes</h1>
+<hr>
+
+<small>
+  {{ formGroup.value | json }}
+  {{ formGroup.valid }}
+</small>
+
+<form [formGroup]="formGroup" (ngSubmit)="enviar()">
+  <div class="mb-3">
+    <label>Nome</label>
+    <input type="text" class="form-control" formControlName="nome">
+  </div>
+  <div class="mb-3">
+    <label>CPF</label>
+    <input type="text" class="form-control" formControlName="cpf">
+  </div>
+  <div class="mb-3">
+    <label>E-mail</label>
+    <input type="text" class="form-control" formControlName="email">
+  </div>
+  <div class="mb-3">
+    <label>Observacoes</label>
+    <input type="text" class="form-control" formControlName="observacoes">
+  </div>
+  <div class="container">
+    <div class="row align-items-start">
+      <div class="col">
+        <button type="submit" [disabled]="!formGroup.valid" class="btn btn-dark">Enviar</button>
+      </div>
+      <div class="col">
+        <button class="btn btn-dark " routerLink="/cliente"> Voltar</button>
+      </div>
+    </div>
+  </div>
+</form>
