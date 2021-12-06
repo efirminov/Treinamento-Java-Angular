@@ -11,15 +11,15 @@ export class ClienteService {
   api = `${environment.api}/clientes/`;
   constructor(private http: HttpClient) { }
 
-  listarTodosClientes(){
+  allCliente(){
     return this.http.get<ICliente[]>(this.api);
   }
 
-  cadastrar(cliente: ICliente){
+  createClient(cliente: ICliente){
     return this.http.post<ICliente>(this.api, cliente);
   }
 
-  remover(id: number) {
+  deleteCliente(id: number) {
     return this.http.delete(`${this.api}/${id}`);
   }
 }

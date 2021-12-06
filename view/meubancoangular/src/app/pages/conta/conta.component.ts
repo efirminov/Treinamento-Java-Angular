@@ -14,13 +14,13 @@ export class ContasComponent implements OnInit {
   constructor(private contaService: ContaService) { }
 
   ngOnInit(): void {
-    this.listarContas();
+    this.listarTodasContas();
   }
 
-  listarContas() {
-    this.contaService.listarTodasContas().subscribe(contasAPI => {
-      this.contas = contasAPI;
-    })
+  listarTodasContas() {
+    this.contaService.allConta().subscribe(contasApi => {
+      this.contas = contasApi;
+    });
   }
 
 }

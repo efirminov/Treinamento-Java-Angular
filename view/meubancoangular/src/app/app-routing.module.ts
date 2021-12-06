@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CadastroEdicaoClientesComponent } from './pages/cliente/cadastro-edicao-clientes/cadastro-edicao-clientes.component';
+import { CadastrarEditarClienteComponent } from './pages/cliente/cadastro-edicao-clientes/cadastro-edicao-clientes.component';
 import { ClientesComponent } from './pages/cliente/cliente.component';
 import { ContasComponent } from './pages/conta/conta.component';
 import { DepositoComponent } from './pages/deposito/deposito.component';
@@ -14,8 +14,8 @@ const routes: Routes = [
   { path: 'saque', component: SaqueComponent },
   { path: 'deposito', component: DepositoComponent },
   { path: 'cliente', component: ClientesComponent },
-  { path: 'cliente/cadastrar', component: CadastroEdicaoClientesComponent},
-  { path: 'cliente/editar/id', component: CadastroEdicaoClientesComponent},
+  { path: 'cliente/cadastrar', component: CadastrarEditarClienteComponent},
+  { path: 'cliente/editar/id', component: CadastrarEditarClienteComponent},
   { path: 'conta', component: ContasComponent }
 ];
 

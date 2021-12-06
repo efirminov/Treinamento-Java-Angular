@@ -1,40 +1,43 @@
-<h1>Clientes</h1>
-
-<div class="mb-4" *ngIf="!clientes.length">
-  <div class="spinner-border" role="status">
-    <span class="sr-only">Loading...</span>
+<div class="row" style="align-items: center">
+  <div class="col-10">
+    <h1 class="mt-5 mb-4">Clientes</h1>
   </div>
-  Carregando...
+  <div class="col-2">
+    <a class="btn btn-dark" routerLink="cadastrar">Novo cliente</a>
+  </div>
 </div>
 
-<table *ngIf="clientes.length" class="table table-dark table-striped">
+<div *ngIf="!clientes.length" class="d-flex justify-content-center">
+  <div class="spinner-grow text-dark" role="status">
+    <span class="visually-hidden m-3">Loading...</span>
+  </div>
+</div>
+
+<table *ngIf="clientes.length" class="table table-hover">
   <thead>
     <tr>
-      <th scope="col">ID</th>
       <th scope="col">Nome</th>
+      <th scope="col">Email</th>
       <th scope="col">CPF</th>
-      <th scope="col">E-mail</th>
       <th scope="col">Observações</th>
-      <th scope="col">Ativo</th>
+      <th scope="col">Status</th>
       <th scope="col">Ações</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let cliente of clientes">
-      <td>{{ cliente.id }}</td>
+    <tr *ngFor="let cliente of clientes;">
       <td>{{ cliente.nome }}</td>
-      <td>{{ cliente.cpf }}</td>
       <td>{{ cliente.email }}</td>
+      <td>{{ cliente.cpf }}</td>
       <td>{{ cliente.observacoes }}</td>
       <td>
         <i *ngIf="cliente.ativo" class="fas fa-thumbs-up text-success"></i>
         <i *ngIf="!cliente.ativo" class="fas fa-thumbs-down text-danger"></i>
       </td>
       <td>
-        <a class="btn btn-danger btn-sm" (click)="confirmar(cliente.id)">Remover</a>
+        <i class="far fa-edit" style="margin-right: 10px; cursor:pointer"></i>
+        <i class="fas fa-trash-alt text-danger" (click)="deletar(cliente.id)" style="cursor:pointer"></i>
       </td>
     </tr>
   </tbody>
 </table>
-
-<a class="btn btn-dark" routerLink="cadastrar">Cadastrar</a>

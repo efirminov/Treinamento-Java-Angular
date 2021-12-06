@@ -10,14 +10,17 @@ import { ISaqueDeposito } from '../interfaces/saque-deposito';
 export class ContaService {
 
   api = `${environment.api}/contas/`;
-
   constructor(private http: HttpClient) { }
 
-  listarTodasContas() {
+  allConta() {
     return this.http.get<IConta[]>(this.api);
   }
 
   saque(saque: ISaqueDeposito) {
     return this.http.post(`${this.api}/saque`, saque);
+  }
+
+  deposito(deposito: ISaqueDeposito) {
+    return this.http.post<IConta>(`${this.api}/deposito`, deposito);
   }
 }
