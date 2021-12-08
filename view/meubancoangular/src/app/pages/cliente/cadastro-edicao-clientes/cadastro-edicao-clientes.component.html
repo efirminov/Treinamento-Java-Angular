@@ -1,11 +1,15 @@
-<h1 class="mt-5 mb-4"> Cadastrar Novo Cliente </h1>
+<h1>Cadastro de Clientes</h1>
+<hr>
 
-
+<small>
+  {{ formGroup.value | json }}
+  {{ formGroup.valid }}
+</small>
 
 <form [formGroup]="formGroup" class="mb-3" (ngSubmit)="enviar()">
   <div class="row">
     <div class="col">
-      <label for="exampleFormControlInput1" class="form-label"> Nome</label>
+      <label for="exampleFormControlInput1" class="form-label"> Nome </label>
       <input type="text" class="form-control" formControlName="nome">
     </div>
     <div class="col">
@@ -14,6 +18,7 @@
     </div>
 
   </div>
+
   <div class="row mt-2">
     <div class="col">
       <label for="exampleFormControlInput1" class="form-label"> CPF</label>
@@ -25,6 +30,8 @@
     </div>
   </div>
   <br>
+
+
   <div class="row mt-2">
     <div class="col">
       <button [disabled]="!formGroup.valid" type="submit" class="btn btn-dark d-flex justify-content-center"
